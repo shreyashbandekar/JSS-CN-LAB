@@ -15,7 +15,7 @@ bid INT,
 date DATE,
 PRIMARY KEY (sid, bid),
 FOREIGN KEY (sid) REFERENCES sailors(sid),
-FOREIGN KEY (bid) REFERENCES boat(bid),
+FOREIGN KEY (bid) REFERENCES boat(bid)
 ON DELETE CASCADE
 );
 -------------------------------------------------------------------------------
