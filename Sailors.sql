@@ -10,10 +10,9 @@ bname VARCHAR(50),
 color VARCHAR(10)
 );
 CREATE TABLE reserves (
-sid INT,
-bid INT,
+sid INT PRIMARY KEY,
+bid INT PRIMARY KEY,
 date DATE,
-PRIMARY KEY (sid, bid),
 FOREIGN KEY (sid) REFERENCES sailors(sid),
 FOREIGN KEY (bid) REFERENCES boat(bid)
 ON DELETE CASCADE
@@ -22,7 +21,7 @@ ON DELETE CASCADE
 ----------------------------------------
 Insertion:-
 -- Insert into SAILORS table
-INSERT INTO sailors (sid, sname, rating, age) VALUES
+INSERT INTO sailors (sid, sname, regno, age) VALUES
 (1, 'John', 8, 22),
 (2, 'Alice', 9, 21),
 (3, 'Bob', 7, 23),
@@ -46,11 +45,11 @@ INSERT INTO reserves (sid, bid, date) VALUES
 (5, 105, '2023-10-29'),
 (6, 101, '2023-11-01'),
 (7, 101, '2023-11-02'),
+
 (1, 102, '2023-11-02'),
 (1, 103, '2023-11-03'),
 (1, 104, '2023-11-04'),
 (1, 105, '2023-11-05'),
-
 (2, 101, '2023-11-06'),
 (2, 103, '2023-11-08'),
 (2, 104, '2023-11-09'),
